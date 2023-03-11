@@ -2,6 +2,10 @@
 ## features to include
 dark mode 
 
+to do:
+clear form after submission
+
+
 
 
 

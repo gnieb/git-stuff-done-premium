@@ -48,6 +48,11 @@ function handleSubmit (e) {
     })
     .then(r=> r.json())
     .then(data => handleNewTask(data))
+    setNewName('')
+    setCategory('')
+    setIsPrioChecked(false)
+    setDueDate('')
+    setNotes('')
 }
 
     return (
