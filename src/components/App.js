@@ -13,6 +13,10 @@ useEffect(() => {
   .then(tData => setTasks(tData))
 }, ([]))
 
+const handleNewTask = (newTask) => {
+  setTasks([newTask, ...tasks])
+}
+
 
   return (
     <div className="App">
@@ -21,7 +25,7 @@ useEffect(() => {
       </header>
       <Switch>
         <Route exact path="/">
-           <TaskList tasks={tasks} />
+           <TaskList tasks={tasks} handleNewTask={handleNewTask} />
         </Route>
         <Route exact path="/calendar">
           <CalendarDisplay />

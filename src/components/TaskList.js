@@ -1,7 +1,7 @@
 import Task from "./Task";
 import AddNewTask from "./AddNewTask";
 
-function TaskList ({tasks}) {
+function TaskList ({tasks, handleNewTask}) {
 
 
     const displayTasks = tasks.map((task) => {
@@ -14,7 +14,7 @@ function TaskList ({tasks}) {
     return (
         <div>
             {displayTasks}
-            <AddNewTask /> 
+            <AddNewTask handleNewTask={handleNewTask} /> 
         </div>
     )
 }

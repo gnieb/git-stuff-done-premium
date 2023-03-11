@@ -1,15 +1,24 @@
 import {useState} from "react";
 
 
-function AddNewTask () {
+function AddNewTask ({handleNewTask}) {
+const [newTask, setNewTask] = useState('');
+const [category, setCategory] = useState('')    
 const [isPrioChecked, setIsPrioChecked] = useState(false)
 
 function handleCheck(e) {
     setIsPrioChecked(e.target.checked)
 }
 
+
+
+
+function handleSubmit () {
+    
+}
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <label>Let's git this done</label>
             <input 
             type="text"
