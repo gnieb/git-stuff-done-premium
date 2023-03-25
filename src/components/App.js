@@ -6,11 +6,23 @@ import {useState, useEffect} from "react";
 
 
 function App() {
+
 const [tasks, setTasks] = useState([])
+const [events, setEvents] = useState([])
+
 useEffect(() => {
-  fetch("http://localhost:3000/tasks")
-  .then(r=> r.json())
-  .then(tData => setTasks(tData))
+  Promise.all([
+    fetch("http://localhost:3000/tasks"),
+    fetch("http://localhost:3000/events"),
+  ])
+  
+  .then(([resTasks, resEvents]) =>
+    Promise.all([resTasks.json(), resEvents.json()])
+    )
+  .then(([dataTasks, dataEvents]) => {
+    setTasks(dataTasks);
+    setEvents(dataEvents);
+  }); 
 }, ([]))
 
 const handleNewTask = (newTask) => {
@@ -28,7 +40,7 @@ const handleNewTask = (newTask) => {
            <TaskList tasks={tasks} handleNewTask={handleNewTask} />
         </Route>
         <Route exact path="/calendar">
-          <CalendarDisplay />
+          <CalendarDisplay events={events} tasks ={tasks} />
         </Route>
       </Switch>
     </div>

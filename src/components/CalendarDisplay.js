@@ -1,33 +1,32 @@
-import Calendar from "react-calendar";
-import {useState} from "react";
-import 'react-calendar/dist/Calendar.css'; 
 
-function CalendarDisplay () {
-const [value, setValue] = useState(new Date());
-const [isClicked, setIsClicked] = useState(false)
+import { Calendar, dateFnsLocalizer } from "react-big-calendar";
+import { format, parse, startOfWeek, getDay } from "date-fns";
+import "react-big-calendar/lib/css/react-big-calendar.css";
 
-function onChange(nextValue) {
-    setValue(nextValue);
-  }
+const locales = {
+	"en-US": require("date-fns")
+};
+const localizer = dateFnsLocalizer({
+	format,
+	parse,
+	startOfWeek,
+	getDay,
+	locales
+});
 
-function onClickDay () {
-    setIsClicked(!isClicked)
-    console.log(value)
-}
 
+function CalendarDisplay ({tasks, events}) {
 
     return (
         <div>
-        <Calendar 
-        onChange={onChange}
-        value={value}
-        onClickDay={onClickDay}
-        />
-        <div>
-            {isClicked ?
-            <h3>{value} details</h3>:
-            <div></div> }
-        </div>
+        <Calendar
+			events={events}
+            tasks={tasks}
+			// resources={myresources}
+			localizer={localizer}
+			defaultView="week"
+			style={{ height: 700 }}
+		/>
         </div>
     )
 }
