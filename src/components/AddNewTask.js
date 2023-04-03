@@ -56,9 +56,9 @@ function handleSubmit (e) {
 }
 
     return (
-        <div className="fixed top-20 left-10 ">
+        <div className="fixed top-15 left-10 mb-20 ">
         <form onSubmit={handleSubmit}
-        className="w-full max-w-lg my-12"
+        className="w-full max-w-lg my-12 "
         >
         <div className="flex flex-wrap -mx-4 mb-6">
             <div className="w-full px-3 mb-6 md:mb-0">
@@ -124,7 +124,7 @@ function handleSubmit (e) {
         <div
         className="flex flex-row -mx-4 mb-6">
             <button type="submit" 
-            className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow focus:shadow-outline focus:outline-none">
+            className="block leading-tight bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow focus:shadow-outline focus:outline-none">
                 Add to List!
             </button>
         </div>

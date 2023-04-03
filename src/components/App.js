@@ -29,6 +29,8 @@ useEffect(() => {
   }); 
 }, ([]))
 
+
+
 const handleNewTask = (newTask) => {
   setTasks([newTask, ...tasks])
 }
@@ -50,7 +52,7 @@ const removeTaskFromTasks = (doomedTask) => {
       <header >
         <Header />
       </header> 
-      <div className="">
+      <div>
         <Switch>
           <Route exact path="/">
             <TaskList tasks={filteredTasks}
