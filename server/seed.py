@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
         print("Seeding new tasks...")
         tasks = []
-        t1 = Task(name='Get gas', note_to_self="Go to the gas station by work building... it's cheaper", done=False, priority=True)
+        t1 = Task(name='Get gas', category="Other", note_to_self="Go to the gas station by work building... it's cheaper", done=False, priority=True)
         
         t2 = Task(name='Vacuum', category="Around the House", note_to_self="Only do the upstairs this week", done=False, priority=True)
         t3 = Task(name='Workout', category="Health", note_to_self="It's gonna be hot this week!", done=False, priority=True)
