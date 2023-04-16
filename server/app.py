@@ -28,5 +28,15 @@ class Tasks(Resource):
 api.add_resource(Tasks, '/tasks')
 
 
+class Events(Resource):
+    def get(self):
+        events = [e.to_dict() for e in Event.query.all()]
+        if len(events):
+            return make_response({"message":"There are no events to display"}, 200)
+        
+        return make_response(events, 200)
+api.add_resource(Events, '/events')   
+
+
 if __name__ == '__main__':
     app.run(port=5555, debug=True)

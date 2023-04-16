@@ -16,8 +16,8 @@ const [sorted, setSorted] = useState('')
 
 useEffect(() => {
   Promise.all([
-    fetch("http://localhost:3001/tasks"),
-    fetch("http://localhost:3001/events"),
+    fetch("http://127.0.0.1:5555/tasks"),
+    fetch("http://127.0.0.1:5555/events"),
   ])
   
   .then(([resTasks, resEvents]) =>
