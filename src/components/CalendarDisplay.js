@@ -19,13 +19,14 @@ const localizer = dateFnsLocalizer({
 function CalendarDisplay ({tasks, events}) {
 
 const myEvents = events.map((ev) => {
-	return {
+	return ev = {
 			id: ev.id,
 			title: ev.title,
-			start: ev.start,
-			end: ev.end
+			start: new Date(ev.start),
+			end: new Date(ev.end)
 		}
 	})
+	console.log(myEvents)
 
     return (
         <div>

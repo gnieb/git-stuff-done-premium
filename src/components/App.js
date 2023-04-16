@@ -29,7 +29,16 @@ useEffect(() => {
   }); 
 }, ([]))
 
-
+// const displayEvents = events.map((e) => {
+//   return e = {
+//     id: e['id'],
+//     title: e['title'],
+//     start: new Date(`${e['start']}`),
+//     end: new Date(e['end'])
+//   }
+// })
+// console.log(events)
+// console.log(displayEvents)
 
 const handleNewTask = (newTask) => {
   setTasks([newTask, ...tasks])
